@@ -1,5 +1,5 @@
 function validateUsername() {
-  const username = document.getElementById("username-input");
+  const username = document.getElementById("username");
   if (username.value.length < 6 || username.value.length > 10) {
     //error
     console.log("Username must be between 6 and 10 in length");
@@ -10,7 +10,7 @@ function validateUsername() {
 
 function validateEmail() {
   const regexString = "/^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+.[a-zA-Z0-9_]+$/";
-  if (!regexString.test(document.getElementById("email-input").value)) {
+  if (!regexString.test(document.getElementById("email").value)) {
     //error
     console.log("invalid email");
     return false;
@@ -29,7 +29,7 @@ function validatePosition() {
 }
 
 function validateType() {
-  const type = document.querySelectorAll('input[name = "type-button"]:checked');
+  const type = document.querySelectorAll('input[name = "type"]:checked');
   if (type == null) {
     //error
     console.log("type must be selected");
@@ -51,3 +51,9 @@ function validateSubmit() {
   }
   return true;
 }
+
+document.getElementById("form").addEventListener("submit", function (event) {
+  if (!validateSubmit()) {
+    event.preventDefault();
+  }
+});

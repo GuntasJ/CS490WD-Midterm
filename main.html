@@ -5,46 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<style>
-    button{
-        padding: 5px;
-        font-size: 15px;
-        margin-top: 20px;
-        border: solid 1px;
-        background-color: white;
-        border-radius: 7px;
-        transition: all ease-in-out 200ms;
-    }
-    button:hover{
-        border-radius: 15px;
-    }
-</style>
+    <style>
+        button {
+            padding: 5px;
+            font-size: 15px;
+            margin-top: 20px;
+            border: solid 1px;
+            background-color: white;
+            border-radius: 7px;
+            transition: all ease-in-out 200ms;
+        }
+
+        button:hover {
+            border-radius: 15px;
+        }
+    </style>
 </head>
 
 <body>
-    <form>
+    <form id="form">
         <fieldset>
-        <legend>Personal Information:</legend>
-    <table>
-        <tr><td><label for="fname">Username:</label></td>
-        <td><input type="text" id="username" name="username"></td></tr>
-        <tr><td><label for="lname">Email:</label></td>
-        <td><input type="text" id="email" name="email"></td></tr>
-    <tr><td><label for="Postion">Postion:</label></td>
-    <td><select name="Postion" id="postion">
-        <option value="engineer">Engineer</option>
-        <option value="Doctor">Doctor</option>
-        <option value="accountant">Accountant</option>
-        <option value="Teacher">Teacher</option>
-      </select></td></tr>
-    <tr><td><label for="type">type:</label></td>
-    <td><input type="radio" id="part-time" name="type" value="part-time"> <label for="Male">Part-time</label></td></tr>
-       <tr><td></td><td><input type="radio" id="full-time" name="type" value="full-time"> <label for="Female">Full-time</label></td></tr>
-    </table>
-    <button type="submit">Submit</button>
-    </fieldset>
- 
-  </form>
+            <legend>Personal Information:</legend>
+            <table>
+                <tr>
+                    <td><label for="fname">Username:</label></td>
+                    <td><input type="text" id="username" name="username"></td>
+                </tr>
+                <tr>
+                    <td><label for="lname">Email:</label></td>
+                    <td><input type="text" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="Postion">Postion:</label></td>
+                    <td><select name="Postion" id="postions">
+                            <option value="engineer">Engineer</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="accountant">Accountant</option>
+                            <option value="Teacher">Teacher</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label for="type">type:</label></td>
+                    <td><input type="radio" id="part-time" name="type" value="part-time"> <label
+                            for="Male">Part-time</label></td>
+                </tr>
+                  <tr>
+                    <td></td>
+                    <td><input type="radio" id="full-time" name="type" value="full-time"> <label
+                            for="Female">Full-time</label></td>
+                </tr>
+            </table>
+            <button id="submit-button" type="submit">Submit</button>
+        </fieldset>
+
+    </form>
 
 </body>
 
