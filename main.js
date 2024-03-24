@@ -58,37 +58,48 @@ window.addEventListener("load", function (event) {
   document.getElementById("form").addEventListener("submit", function (event) {
     event.preventDefault();
 
+    const username = document.getElementById("username")
     const usernameValidation = document.getElementById("username-validation");
     if (validateUsername()) {
       console.log("valid");
       usernameValidation.innerHTML = "";
+      username.classList.remove("warning-input")
       usernameValidation.appendChild(document.createTextNode("✅"));
     } else {
       console.log("invalid");
       usernameValidation.innerHTML = "";
-      usernameValidation.appendChild(document.createTextNode("Invalid"));
+      username.classList.add("warning-input")
+      usernameValidation.appendChild(document.createTextNode("Username should be >=6 and <= 10"));
     }
 
     const emailValidation = document.getElementById("email-validation");
+    const email = document.getElementById("email")
     if (validateEmail()) {
       console.log("valid");
+      email.classList.remove("warning-input")
       emailValidation.innerHTML = "";
       emailValidation.appendChild(document.createTextNode("✅"));
     } else {
       console.log("invalid");
+      email.classList.add("warning-input")
+      emailValidation.style = ""
       emailValidation.innerHTML = "";
-      emailValidation.appendChild(document.createTextNode("Invalid"));
+      emailValidation.appendChild(document.createTextNode("Not a vaild e-mail address"));
     }
 
     const positionValidation = document.getElementById("position-validation");
+    const position = document.getElementById("position")
+
     if (validatePosition()) {
       console.log("valid");
+      position.classList.remove("warning-input")
       positionValidation.innerHTML = "";
       positionValidation.appendChild(document.createTextNode("✅"));
     } else {
       console.log("invalid");
+      position.classList.add("warning-input")
       positionValidation.innerHTML = "";
-      positionValidation.appendChild(document.createTextNode("Invalid"));
+      positionValidation.appendChild(document.createTextNode("You must select a position"));
     }
 
     const typeValidation = document.getElementById("type-validation");
@@ -99,7 +110,7 @@ window.addEventListener("load", function (event) {
     } else {
       console.log("invalid");
       typeValidation.innerHTML = "";
-      typeValidation.appendChild(document.createTextNode("Invalid"));
+      typeValidation.appendChild(document.createTextNode("You must select a type"));
     }
   });
 });

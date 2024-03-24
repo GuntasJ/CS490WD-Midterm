@@ -19,24 +19,44 @@
         button:hover {
             border-radius: 15px;
         }
+        button:active{
+            background-color: black;
+            color: white;
+        }
+        .warning{
+            margin: 0;
+            padding: 0;
+            color: red;
+        }
+        .warning-input{
+            border: 1px solid red;
+        }
+        tr{
+            height: 10px;
+        }
+        .legend{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
     <form id="form">
-        <fieldset>
+        <fieldset class="legend">
             <legend>Personal Information:</legend>
             <table>
                 <tr>
                     <td><label for="fname">Username:</label></td>
                     <td><input type="text" id="username" name="username">
                     </td>
-                    <td><p id="username-validation"></p></td>
+                    <td><p id="username-validation" class="warning"></p></td>
                 </tr>
                 <tr>
-                    <td><label for="email">Email:</label></td>
+                    <td><label for="email">E-mail:</label></td>
                     <td><input type="text" id="email" name="email"></td>
-                    <td><p id="email-validation"></p></td>
+                    <td><p id="email-validation" class="warning"></p></td>
                 </tr>
                 <tr>
                     <td><label for="Postion">Postion:</label></td>
@@ -46,10 +66,10 @@
                             <option value="Mechanic">Mechanic</option>
                             <option selected value="Default">Not Selected</option>
                         </select></td>
-                        <td><p id="position-validation"></p></td>
+                        <td><p id="position-validation" class="warning"></p></td>
                 </tr>
                 <tr>
-                    <td><label for="type">type:</label></td>
+                    <td><label for="type">Type:</label></td>
                     <td><input type="radio" id="part-time" name="type" value="part-time"> <label
                             for="Male">Part-time</label></td>
                 </tr>
@@ -57,10 +77,11 @@
                     <td></td>
                     <td><input type="radio" id="full-time" name="type" value="full-time"> <label
                             for="Female">Full-time</label></td>
-                            <td><p id="type-validation"></p></td>
+                            <td><p id="type-validation" class="warning"></p></td>
                 </tr>
+                <tr><td><button type="submit">Submit</button></td></tr>
             </table>
-            <button type="submit">Submit</button>
+            
         </fieldset>
 
     </form>
