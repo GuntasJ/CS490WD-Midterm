@@ -9,8 +9,8 @@ function validateUsername() {
 }
 
 function validateEmail() {
-  const regexString = "/^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+.[a-zA-Z0-9_]+$/";
-  if (!regexString.test(document.getElementById("email").value)) {
+  const regexString = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  if (!document.getElementById("email").value.match(regexString)) {
     //error
     console.log("invalid email");
     return false;
@@ -69,16 +69,16 @@ window.addEventListener("load", function (event) {
       usernameValidation.appendChild(document.createTextNode("Invalid"));
     }
 
-    // const emailValidation = document.getElementById("email-validation");
-    // if (validateEmail()) {
-    //   console.log("valid");
-    //   emailValidation.innerHTML = "";
-    //   emailValidation.appendChild(document.createTextNode("✅"));
-    // } else {
-    //   console.log("invalid");
-    //   emailValidation.innerHTML = "";
-    //   emailValidation.appendChild(document.createTextNode("Invalid"));
-    // }
+    const emailValidation = document.getElementById("email-validation");
+    if (validateEmail()) {
+      console.log("valid");
+      emailValidation.innerHTML = "";
+      emailValidation.appendChild(document.createTextNode("✅"));
+    } else {
+      console.log("invalid");
+      emailValidation.innerHTML = "";
+      emailValidation.appendChild(document.createTextNode("Invalid"));
+    }
 
     const positionValidation = document.getElementById("position-validation");
     if (validatePosition()) {
