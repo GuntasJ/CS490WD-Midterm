@@ -73,4 +73,45 @@ window.addEventListener("load", function (event) {
         usernameValidation.appendChild(document.createTextNode("Invalid"));
       }
     });
+
+  document.getElementById("email").addEventListener("keyup", function (event) {
+    const emailValidation = document.getElementById("email-validation");
+    if (validateEmail()) {
+      console.log("valid");
+      usernameValidation.innerHTML = "";
+      usernameValidation.appendChild(document.createTextNode("✅"));
+    } else {
+      console.log("invalid");
+      usernameValidation.innerHTML = "";
+      usernameValidation.appendChild(document.createTextNode("Invalid"));
+    }
+  });
+
+  document
+    .getElementById("position")
+    .addEventListener("keyup", function (event) {
+      const usernameValidation = document.getElementById("position-validation");
+      if (validateUsername()) {
+        console.log("valid");
+        usernameValidation.innerHTML = "";
+        usernameValidation.appendChild(document.createTextNode("✅"));
+      } else {
+        console.log("invalid");
+        usernameValidation.innerHTML = "";
+        usernameValidation.appendChild(document.createTextNode("Invalid"));
+      }
+    });
+
+  document.getElementById("type").addEventListener("keyup", function (event) {
+    const usernameValidation = document.getElementById("type-validation");
+    if (validateUsername()) {
+      console.log("valid");
+      usernameValidation.innerHTML = "";
+      usernameValidation.appendChild(document.createTextNode("✅"));
+    } else {
+      console.log("invalid");
+      usernameValidation.innerHTML = "";
+      usernameValidation.appendChild(document.createTextNode("Invalid"));
+    }
+  });
 });
