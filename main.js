@@ -61,7 +61,7 @@ window.addEventListener("load", function (event) {
 
   document
     .getElementById("username")
-    .addEventListener("blur", function (event) {
+    .addEventListener("keyup", function (event) {
       const usernameValidation = document.getElementById("username-validation");
       if (validateUsername()) {
         console.log("valid");
