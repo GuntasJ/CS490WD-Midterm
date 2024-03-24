@@ -19,8 +19,8 @@ function validateEmail() {
 }
 
 function validatePosition() {
-  const position = document.getElementById("positions");
-  if (position.value == "not-selected") {
+  const position = document.getElementById("position");
+  if (position.value == "Default") {
     //error
     console.log("invalid position");
     return false;
@@ -30,8 +30,10 @@ function validatePosition() {
 
 function validateType() {
   const type = document.querySelectorAll('input[name = "type"]:checked');
-  if (type == null) {
+  console.log(type);
+  if (type.length === 0) {
     //error
+
     console.log("type must be selected");
     return false;
   }
@@ -67,16 +69,16 @@ window.addEventListener("load", function (event) {
       usernameValidation.appendChild(document.createTextNode("Invalid"));
     }
 
-    const emailValidation = document.getElementById("email-validation");
-    if (validateEmail()) {
-      console.log("valid");
-      emailValidation.innerHTML = "";
-      emailValidation.appendChild(document.createTextNode("✅"));
-    } else {
-      console.log("invalid");
-      emailValidation.innerHTML = "";
-      emailValidation.appendChild(document.createTextNode("Invalid"));
-    }
+    // const emailValidation = document.getElementById("email-validation");
+    // if (validateEmail()) {
+    //   console.log("valid");
+    //   emailValidation.innerHTML = "";
+    //   emailValidation.appendChild(document.createTextNode("✅"));
+    // } else {
+    //   console.log("invalid");
+    //   emailValidation.innerHTML = "";
+    //   emailValidation.appendChild(document.createTextNode("Invalid"));
+    // }
 
     const positionValidation = document.getElementById("position-validation");
     if (validatePosition()) {
