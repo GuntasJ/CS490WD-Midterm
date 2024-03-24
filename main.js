@@ -52,8 +52,25 @@ function validateSubmit() {
   return true;
 }
 
-document.getElementById("form").addEventListener("submit", function (event) {
-  if (!validateSubmit()) {
-    event.preventDefault();
-  }
+window.addEventListener("load", function (event) {
+  document.getElementById("form").addEventListener("submit", function (event) {
+    if (!validateSubmit()) {
+      event.preventDefault();
+    }
+  });
+
+  document
+    .getElementById("username")
+    .addEventListener("blur", function (event) {
+      const usernameValidation = document.getElementById("username-validation");
+      if (validateUsername()) {
+        console.log("valid");
+        usernameValidation.innerHTML = "";
+        usernameValidation.appendChild(document.createTextNode("✅"));
+      } else {
+        console.log("invalid");
+        usernameValidation.innerHTML = "";
+        usernameValidation.appendChild(document.createTextNode("Invalid"));
+      }
+    });
 });
